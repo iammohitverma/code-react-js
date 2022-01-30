@@ -1,0 +1,110 @@
+import React, {useState} from "react";
+
+const App = () => {
+    
+    let date;
+    let hours;
+    let minutes;
+    let seconds;
+    let initTime;
+    let ap;
+
+    let setTimeFun = () => {
+        date = new Date();
+        hours = date.getHours();
+        minutes = date.getMinutes();
+        seconds = date.getSeconds();
+        if(hours < 12 && hours >= 1){
+            ap = "AM";
+        }else{
+            ap = "PM";
+        }
+        if(hours > 12){
+            hours = hours - 12;
+        }
+        initTime = `${hours}:${minutes}:${seconds} ${ap}`;
+    }
+
+    setTimeFun();
+    
+    let [currTime, updateTime] = useState(initTime);
+    
+    
+    setTimeout(() => {
+        setTimeFun();
+        updateTime(initTime);
+    }, 1000);
+
+    return(
+        <>
+            <section className="wrap time">
+                <div className="container">
+                    <div className="inner">
+                        <h1>{currTime}</h1>
+                    </div>
+                </div>
+            </section>
+        </>
+    )
+}
+
+export default App;
+
+
+
+
+
+
+
+
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@400;600;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+.my-class {
+    background-color: tomato;
+    color: #ffffff;
+}
+
+.wrap {
+    position: relative;
+    background: #f5f4f4;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrap.time {
+    background-color: #000;
+}
+
+.wrap.time * {
+    color: #f5f4f4;
+    font-family: 'Teko', sans-serif;
+}
+
+.time h1 {
+    font-size: 350px;
+}
+
+button {
+    background: #dc7335;
+    font-size: 22px;
+    border: none;
+    padding: 20px 40px;
+    border-radius: 5px;
+    color: #fff;
+    margin: 10px;
+}
+
+.inner {
+    text-align: center;
+}
+</style>

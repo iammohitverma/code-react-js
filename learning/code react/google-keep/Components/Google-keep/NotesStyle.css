@@ -1,0 +1,72 @@
+section {
+  position: relative;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+.create-note {
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto 50px;
+  box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px;
+  background: #fff;
+  padding: 30px;
+}
+.input-wrap:not(:last-child) {
+  margin-bottom: 20px;
+}
+.input-wrap > * {
+  width: 100%;
+  border: none;
+  box-shadow: rgb(0 0 0 / 8%) 0px 0px 0px 1px;
+  padding: 10px;
+}
+.addNote {
+  background: #ffc106 !important;
+  color: #fff !important;
+  box-shadow: rgb(0 0 0 / 15%) 1.95px 1.95px 2.6px;
+}
+.notes-wrap ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin-inline: -12px;
+}
+.notes-wrap ul li {
+  padding: 0 12px;
+  width: calc(100% / 4);
+  margin-bottom: 24px;
+}
+.notes-wrap ul .box {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  padding: 20px;
+}
+
+.notes-wrap li h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.notes-wrap li p {
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+.delete-note {
+  background: #ffaaaa !important;
+  color: #fff !important;
+  box-shadow: rgb(0 0 0 / 5%) 0px 6px 24px 0px, rgb(0 0 0 / 8%) 0px 0px 0px 1px !important;
+}
+@media (max-width: 1199.92px) {
+  .notes-wrap ul li {
+    width: calc(100% / 3);
+  }
+}
+@media (max-width: 991.92px) {
+  .notes-wrap ul li {
+    width: calc(100% / 2);
+  }
+}
+@media (max-width: 767.92px) {
+  .notes-wrap ul li {
+    width: calc(100% / 1);
+  }
+}

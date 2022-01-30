@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+body {
+  background-color: #f5f6fa;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
+section {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.box {
+  max-width: 700px;
+  padding: 30px;
+  background: #fff;
+  margin-inline: auto;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.head {
+  margin-bottom: 25px;
+}
+.box h1 {
+  font-size: 28px;
+  text-align: center;
+  font-weight: 600;
+  color: #718093;
+}
+.accordion {
+  box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
+}
+.accordion:not(:last-child) {
+  margin-bottom: 20px;
+}
+.accordion-btn {
+  position: relative;
+}
+.accordion-btn h2 {
+  font-size: 16px;
+  font-weight: 500;
+  color: #353b48;
+  padding: 20px;
+  padding-right: 70px;
+  background: #f2f7ff;
+  line-height: 1.6;
+}
+.accordion-btn i {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: hsl(206deg 100% 89%);
+  font-size: 34px;
+  font-style: unset;
+  font-weight: 300;
+  cursor: pointer;
+  z-index: 1;
+}
+.accordion .content {
+  padding: 20px;
+  background: hsl(11deg 100% 96%);
+  color: #353b48;
+  font-size: 16px;
+  line-height: 1.7;
+}

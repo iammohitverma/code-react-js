@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header .navbar {
+  background: #fff !important;
+  box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+section {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.banner .row {
+  align-items: center;
+}
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+figure {
+  text-align: right;
+}
+.banner img {
+  max-height: 350px;
+}

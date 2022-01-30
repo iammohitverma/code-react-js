@@ -1,0 +1,76 @@
+import React, { useState } from "react";
+
+const App = () => {
+
+const [form, updateform] = useState({
+    fname: "",
+    lname: "",
+    email: "",
+    number: ""
+});
+
+const [afterSubmitName, updateAfterSubmitName] = useState("");
+
+const inputChange = (event) => {
+    let inputValue = event.target.value;
+    let inputName = event.target.name;
+    updateform((prevState) => {
+        if(inputName === "fname"){
+            return{
+                fname: inputValue,
+                lname: prevState.lname,
+                email: prevState.email,
+                number: prevState.number
+            }
+        }else if(inputName === "lname"){
+            return{
+                fname: prevState.fname,
+                lname: inputValue,
+                email: prevState.email,
+                number: prevState.number
+            }
+        }else if(inputName === "email"){
+            return{
+                fname: prevState.fname,
+                lname: prevState.lname,
+                email: inputValue,
+                number: prevState.number
+            }
+        }else if(inputName === "number"){
+            return{
+                fname: prevState.fname,
+                lname: prevState.lname,
+                email: prevState.email,
+                number: inputValue
+            }
+        }
+    });
+} 
+
+const formSubmit = (event) => {
+    event.preventDefault();
+    updateAfterSubmitName(form.fname + " " + form.lname);
+}
+
+    
+    return(
+        <>
+            <div className="wrap">
+                <div className="inner">
+                    <h1>Hello, {afterSubmitName}</h1>
+                    <br/>
+                    <form onSubmit={formSubmit}>
+                        <input type="text" onChange={inputChange} placeholder="First Name" name="fname" value={form.fname}/>
+                        <input type="text" onChange={inputChange} placeholder="Last Name" name="lname" value={form.lname}/>
+                        <input type="email" onChange={inputChange} placeholder="Email" name="email" value={form.email}/>
+                        <input type="number" onChange={inputChange} placeholder="Number" name="number" value={form.number}/>
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </>
+    )
+
+}
+
+export default App;

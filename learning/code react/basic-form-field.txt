@@ -1,0 +1,94 @@
+import React, {useState} from "react";
+
+const App = () => {
+  let [currentValue, updateValue] = useState("");
+  const changeInput = (e) => {
+    let initValue = e.target.value;
+    updateValue(initValue);
+  }
+  
+  let [resultOutput, updateValueOutput] = useState("");
+  const printValue = () => {
+    updateValueOutput(currentValue);
+  }
+
+
+  return(
+
+  <>
+
+    <div className="wrap">
+      <div className="container">
+        <div className="inner">
+        <h2>Hello, {resultOutput}</h2>
+          <div className="input-wrap">
+            <input type="text" placeholder="Enter Your Name" onChange={changeInput} value={currentValue}/>
+          </div>
+          <div className="input-wrap">
+            <button onClick={printValue}> Click me </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </>
+  
+  )
+}
+
+
+export default App;
+
+
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  .wrap {
+    padding: 100px;
+    background: hsl(242deg 100% 99%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .inner {
+    text-align: center;
+    background-color: #fff;
+    box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
+    max-width: 500px;
+    padding: 50px;
+    margin: auto;
+  }
+  h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+  }
+  .input-wrap {
+    margin-bottom: 30px;
+  }
+  input {
+    width: 100%;
+    border: none;
+    box-shadow: rgb(0 0 0 / 5%) 0px 6px 24px 0px, rgb(0 0 0 / 8%) 0px 0px 0px 1px;
+    padding: 15px;
+  }
+  input[type="submit"],
+  button {
+    background: #adadff;
+    padding: 15px;
+    border: none;
+    width: 100%;
+    font-size: 22px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #ffffff;
+    letter-spacing: 1px;
+  }
+  
+</style>

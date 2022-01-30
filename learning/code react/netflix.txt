@@ -1,0 +1,156 @@
+Create Card Component | first
+
+
+import React from "react";
+
+function Card(props) { 
+    return(
+    
+      
+    <div className="col-4">
+      <div className="card">
+          <img src={props.imageSrc} alt="Webseries Poster" />
+          <div className="container">
+            <div className="content">
+              <h4>{props.name}</h4> 
+            </div>
+          </div>
+      </div>
+    </div>
+
+
+    )
+ }
+
+
+ export default Card;
+
+
+Then > index.js
+import React from "react";
+import ReactDom from "react-dom";
+import "./index.css";
+import Header from "./Header";
+import Card from "./Card";
+
+
+ReactDom.render(
+  <>
+    <Header/>
+    <section className="card-sec">
+      <div className="container">
+        <div className="row">
+          <Card imageSrc="https://www.heavenofhorror.com/wp-content/uploads/2020/04/Extracurricular-netflix-review.jpg" name="Extra Curricular" />
+          <Card imageSrc="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTbllVWxmzkxH1PCsHM9OCm_FnuP9KmQtAB3oajQGxgHJTBV-o8" name="Squid Game"/>
+          <Card imageSrc="https://images-na.ssl-images-amazon.com/images/I/61eaDCqOT8L.jpg" name="Black Mirror"/>
+        </div>
+      </div>
+    </section>
+  </>,
+  document.getElementById("root")
+);
+
+
+// add bootstrap cdn for style
+
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #222;
+}
+
+.card {
+    background-color: #000;
+}
+
+.card * {
+    color: #ffffff;
+    margin: 0;
+}
+
+.card .content {
+    padding: 20px 0;
+}
+
+.card img {
+    height: 250px;
+    object-fit: cover;
+    max-width: 100%;
+    width: 100%;
+}
+</style>
+
+
+
+// Card data array of object
+let sdata = [{
+    id: 0,
+    imageSrc: "https://www.heavenofhorror.com/wp-content/uploads/2020/04/Extracurricular-netflix-review.jpg",
+    name: "Extra Curricular"
+},
+{
+    id: 1,
+    imageSrc: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTbllVWxmzkxH1PCsHM9OCm_FnuP9KmQtAB3oajQGxgHJTBV-o8",
+    name: "Squid Game"
+},
+{
+    id: 2,
+    imageSrc: "https://images-na.ssl-images-amazon.com/images/I/61eaDCqOT8L.jpg",
+    name: "Black Mirror"
+}
+]
+
+export default sdata;
+
+
+
+
+function mapFun(currentValue){
+    return (
+    <Card key={currentValue.id} imageSrc={currentValue.imageSrc} name={currentValue.name} />
+    )
+  }
+  
+  ReactDom.render(
+    <>
+      <Header/>
+      <section className="card-sec">
+        <div className="container">
+          <div className="row">
+            {sdata.map(mapFun)}
+          </div>
+        </div>
+      </section>
+    </>,
+    document.getElementById("root")
+  );
+
+
+  or
+
+
+  ReactDom.render(
+    <>
+      <Header/>
+      <section className="card-sec">
+        <div className="container">
+          <div className="row">
+            {
+                sdata.map((currentValue)=>{
+                    return (
+                        <Card imageSrc={currentValue.imageSrc} name={currentValue.name} />
+                    )
+                })
+            }
+          </div>
+        </div>
+      </section>
+    </>,
+    document.getElementById("root")
+  );

@@ -1,0 +1,30 @@
+import React, {useState} from "react";
+import Button from '@mui/material/Button';
+import Tooltip from '@mui/material/Tooltip';
+
+const MaterialUi = () => {
+
+    const [defaultColor, defaultColorUpdate] = useState(false);
+
+    const changeBg = () => {
+        if(defaultColor == true){
+            defaultColorUpdate(false);
+        }else{
+            defaultColorUpdate(true);
+        }
+    }
+
+    return (
+        <div className="wrap" style={{backgroundColor: defaultColor ? "#fbc531" : "#dcdde1"}}>
+            <div className="inner">
+                <Tooltip title="Change Background">
+                    <Button variant="contained" onClick={changeBg}>
+                        Change Background color using conditional css 
+                    </Button>
+                </Tooltip>
+            </div>
+        </div>
+    )
+}
+
+export default MaterialUi;

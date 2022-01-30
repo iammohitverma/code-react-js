@@ -1,0 +1,93 @@
+import React, { useState } from "react";
+
+const App = () => {
+
+    const [firstName, updateFname] = useState("");
+    const [lastName, updateLname] = useState("");
+    const [fullName, updateFullname] = useState("");
+
+    const inputChangeFirst = (event) => {
+        updateFname(event.target.value)
+    }
+
+    const inputChangeLast = (event) => {
+        updateLname(event.target.value);
+    }
+
+    const formSubmit = (event) => {
+        event.preventDefault();
+        updateFullname(firstName + " " + lastName);
+    }
+    
+    return(
+        <>
+            <div className="wrap">
+                <div className="inner">
+                    <h1>Hello, {fullName}</h1>
+                    <br/>
+                    <form onSubmit={formSubmit}>
+                        <input type="text" onChange={inputChangeFirst} placeholder="First Name" value={firstName}/>
+                        <input type="text" onChange={inputChangeLast} placeholder="Last Name" value={lastName}/>
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </>
+    )
+
+}
+
+export default App;
+
+
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@400;600;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+.wrap {
+    position: relative;
+    background: #f5f4f4;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+button {
+    background: #dc7335;
+    font-size: 22px;
+    border: none;
+    padding: 20px 40px;
+    border-radius: 5px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.inner {
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+}
+
+form input[type="text"],
+form button {
+    display: block;
+    width: 100%;
+    margin-bottom: 30px;
+    min-height: 50px;
+    box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
+    border: none;
+    border-radius: 5px;
+}
+
+input {
+    padding: 15px;
+}
+</style>

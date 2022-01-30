@@ -1,0 +1,1945 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./assets/style.css" rel="stylesheet">
+    <link href="./assets/prism/prism.css" rel="stylesheet">
+    <link href="./assets/line-number/line-number.css" rel="stylesheet">
+    <script src="./assets/prism/prism.js"></script>
+    <script src="./assets/line-number/line-number.js"></script>
+    <link rel="icon" href="https://reactjs.org/favicon.ico">
+    <title>React Code Snippets </title>
+</head>
+
+<body>
+
+    <div class="container-fluid wordpressFunctionAP">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 right">
+                    <ul>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    Require basic Things
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-javascript">//for use react
+var React = require('react'); 
+//for dom manupulation
+var ReactDom = require('react-dom'); 
+
+ReactDom.render('kya dikhana hai',
+ 'kahan dikhana hai', 'callback fun');
+
+ //Useful Shortcut
+ rafce for React Arrow Function Component export
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    Print Hello World
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-javascript">var React = require('react');   
+var ReactDom = require('react-dom');
+
+ReactDom.render(&lt;h1>Hello world&lt;/h1>,
+ document.getElementById("root"));
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    Javascript EXP in React
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-javascript">Use Javascript in JSX using {}
+const myName = "Mohit";
+
+ReactDom.render(
+&lt;>
+    &lt;h1>My Name is {myName}&lt;/h1>
+    &lt;p>Addition of two number is {5 + 5}&lt;/p>
+&lt;/>,
+    document.getElementById("root"));
+
+We can't use statements in {};    
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    Template literals
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-javascript">Use Template literals using ``
+const fName = "Mohit";
+const lName = "Verma";
+
+ReactDom.render(
+&lt;>
+    &lt;h1>My Name is {`${fName} ${lName}`}&lt;/h1>
+&lt;/>,
+    document.getElementById("root"));
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    CSS include and apply in React
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-javascript">import "./index.css";
+Use className instead of class=""
+const fName = "Mohit";
+const lName = "Verma";
+
+ReactDom.render(
+&lt;>
+    &lt;h1 className="my-class">My Name is {`${fName} ${lName}`}&lt;/h1>
+&lt;/>,
+    document.getElementById("root"));
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    Functional Component in React
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-javascript">While creating Component file first name must be capital 
+eg: "Heading.jsx"
+
+Crete new file for Component :-
+import React from "react";
+
+function Heading() {
+    return &lt;h1> Hello Mohit &lt;/h1>;
+}
+if multiple element then use round braces () along with return
+function Heading() {
+    return (
+        &lt;ul> 
+            &lt;li> 1 &lt;/li>
+            &lt;li> 2 &lt;/li>
+            &lt;li> 3 &lt;/li>
+        &lt;/ul>
+        )
+}
+
+export default Heading;
+
+then you need to import on file where you want to call using:-
+&lt;Heading/>
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    Import Export in React
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-javascript">We can also Import Export Variables as Components
+const yourName = "Mohit Verma";
+export default yourName;
+
+Then Call or render Variable using {};
+
+ReactDom.render(
+&lt;>
+    &lt;h1>Hello, {yourName}  &lt;/h1>
+&lt;/>
+  ,
+  document.getElementById("root")
+);
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    Import Export multiple variables and functions in React
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-javascript">const yourName = "Mohit Verma";
+const yourFavColor = "Black";
+
+function myTestVar(){
+    let myTestVariable = "Test 123";
+    return myTestVariable
+}
+
+export {yourName, yourFavColor, myTestVar}
+
+Import
+=======
+import {yourName, yourFavColor, myTestVar} from "./App";
+
+
+Import all at once using *
+import * as appData from "./App";
+ReactDom.render(
+  &lt;>
+    &lt;h1>Hello, {appData.yourName}  &lt;/h1>
+    &lt;h1>Your Favourite color is {appData.yourFavColor}  &lt;/h1>
+    &lt;h1>Your Favourite color is {appData.myTestVar()}  &lt;/h1>    
+  &lt;/>
+  ,
+  document.getElementById("root")
+);
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    Simple Calculator App in React
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-javascript">function addition(a, b){
+    let sum = a + b;
+    return sum
+}
+export {addition};
+
+import {addition} from "./App";
+ReactDom.render(
+  &lt;>
+    &lt;h1>Sum of two number is {addition(5, 5)}  &lt;/h1>    
+  &lt;/>
+  ,
+  document.getElementById("root")
+);
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    Props in React
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-javascript">Props is the custom attribute
+Don't use reserved keywords as props eg: className
+function CustomAttr(props){
+    console.log(props);
+    return (
+        &lt;img src={props.imageSrc} alt="img" />
+    )
+}
+
+ReactDom.render(
+    &lt;>
+        &lt;CustomAttr imageSrc="your-image.jpg"/>
+    &lt;/>,
+    document.getElementById("root")
+);
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    Netflix Series in React
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-javascript">&lt;a href="./netflix.txt">&lt;/a>
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    JavaScript Arrays
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-javascript">An array is a special variable, which can hold more than one value:
+const cars = ["Saab", "Volvo", "BMW"];
+console.log(cars);
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    JavaScript Arrays Map()
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-javascript">const numbers = [65, 44, 12, 4];
+const newArr = numbers.map(myFunction);
+
+document.getElementById("demo").innerHTML = newArr;
+
+function myFunction(num) {
+    return num;
+}
+
+using fat arrow function
+const numbers = [65, 44, 12, 4];
+const newArr = numbers.map((currentValue) => {
+  console.log(currentValue);
+  return currentValue;
+});
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    React Developer Tools chrome Extension
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-javascript">https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    If Else statement in React
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-javascript">if (hour < 18) {
+    greeting = "Good day";
+} else {
+    greeting = "Good evening";
+}
+
+
+Ternary operator
+condition ? exprIfTrue : exprIfFalse
+
+
+if ansToggle returns true only then print content div
+{
+    ansToggle && 
+    &lt;div className="content">
+        &lt;p>{ans}&lt;/p>
+    &lt;/div>
+}
+
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    Node package manager for bootstrap
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-javascript">&lt;a href="https://www.npmjs.com/package/bootstrap">&lt;/a>
+Add bootstrap package and import bootstrap files form
+myapp\node_modules\bootstrap\dist\css\bootstrap-css-files-there
+myapp\node_modules\bootstrap\dist\js\bootstrap-js-files-there
+Extension for React Bootstrap = Intellisense for Css
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    Accordion in React js
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-javascript">&lt;a href="./Accordion">&lt;/a>
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    Google keep in React js
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-javascript">&lt;a href="./google-keep">&lt;/a>
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    Window width check in React js
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-javascript">import React, {useState, useEffect} from 'react';
+
+const UseStates = () => {
+
+const [initWidth, setInitWidth] = useState(window.screen.width);
+
+const resizeFun = () => {
+    setInitWidth(window.innerWidth);
+}
+
+useEffect(() => {
+    window.addEventListener("resize", resizeFun);
+    return () => {
+      // cleanup
+      window.removeEventListener("resize", resizeFun);
+    };
+  });
+
+    return(
+    &lt;>
+        &lt;h1>Hello my screen size is {initWidth}&lt;/h1>
+    &lt;/>
+    )
+};
+
+export default UseStates;
+    
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    Create Context in React js
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-javascript">Context provides a way to pass data through the component 
+tree without having to pass props down manually at every level.
+Using context, we can avoid passing props through intermediate elements:
+
+So, first we need to import as below:-
+import React, {createContext} from 'react';
+
+const myName = createContext();
+
+const App = () => {
+    return(
+        &lt;>
+        &lt;myName.Provider value="Mohit Verma">
+            &lt;CompA />
+        &lt;/myName.Provider>
+        &lt;/>
+    )
+}
+
+export default App;
+export {myName};
+
+
+//Where we want this Context value
+
+import React from 'react';
+import {myName} from './App';
+
+
+const CompC = () => {
+  return(
+    &lt;myName.Consumer>
+    {(myName) => {
+      return &lt;h1>My Name is {myName}&lt;/h1>
+    }}
+    &lt;/myName.Consumer>
+  ) 
+}
+
+export default CompC;
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    Multiple Create Context in React js
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-javascript">const myFirstName = createContext();
+const myLastName = createContext();
+
+const App = () => {
+    return(
+    &lt;>
+        &lt;myFirstName.Provider value="Mohit">
+            &lt;myLastName.Provider value="Verma">
+                &lt;CompA />
+            &lt;/myLastName.Provider>
+        &lt;/myFirstName.Provider>
+    &lt;/>
+    )
+}
+
+export default App;
+export {myFirstName, myLastName};
+
+//Where we want this Context value
+
+import React from 'react';
+import {myFirstName, myLastName} from './App';
+
+
+const CompC = () => {
+  return(
+    &lt;myFirstName.Consumer>
+    {(myFirstName) => {
+      return (
+        &lt;myLastName.Consumer>
+          {(myLastName)=>{
+            return (
+              &lt;h1>My Name is {myFirstName + " " + myLastName}&lt;/h1>
+            )
+          }}
+        &lt;/myLastName.Consumer>        
+        )
+    }}
+    &lt;/myFirstName.Consumer>
+  ) 
+}
+
+export default CompC;
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    useContext in React js
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-javascript">useContext is very useful and far better than consumer method above
+const myFirstName = createContext();
+const myLastName = createContext();
+
+const App = () => {
+    return(
+    &lt;>
+        &lt;myFirstName.Provider value="Mohit">
+            &lt;myLastName.Provider value="Verma">
+                &lt;CompA />
+            &lt;/myLastName.Provider>
+        &lt;/myFirstName.Provider>
+    &lt;/>
+    )
+}
+
+export default App;
+export {myFirstName, myLastName};
+
+//Where we want this Context value
+
+import React, { useContext } from 'react';
+import {myFirstName, myLastName} from './App';
+
+
+const CompC = () => {
+  const firstName = useContext(myFirstName);
+  const lastName = useContext(myLastName);
+  return(
+    <h1>Hello, My Name is {firstName + " " + lastName}</h1>
+  ) 
+}
+
+export default CompC;
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    useEffect in React js
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-javascript"> Sometimes, we want to run some additional code after React has updated the DOM.
+then we can easily do with using useEffect() method.
+UseState function run after dom refresh.
+
+import React, { useState, useEffect } from 'react';
+
+function Example() {
+  const [count, setCount] = useState(0);
+
+  // Similar to componentDidMount and componentDidUpdate:
+  useEffect(() => {
+    // Update the document title using the browser API
+    alert("You Clicked " + count + " Times");
+  });
+
+  return (
+    &lt;div>
+      &lt;p>You clicked {count} times&lt;/p>
+      &lt;button onClick={() => setCount(count + 1)}>
+        Click me
+      &lt;/button>
+    &lt;/div>
+  );
+
+// Run only once when dom is rendered first time
+useEffect(() => {
+    alert("You Clicked " + count + " Times");
+}, []);
+//Blank array [] return only run one time
+
+
+//useEffect fun only when specific variable update
+import React, { useState, useEffect } from "react";
+
+const App = () => {
+
+  let [count, setCount] = useState(0);
+  let [countTwo, setCountTwo] = useState(0);
+
+
+  //only run when countTwo update
+  useEffect(() => {
+    alert("You Clicked " + countTwo + " Times");
+  }, [countTwo]);
+
+  
+
+  let incFun = () => {
+    setCount(count = count+1);
+  }
+  let incFunTwo = () => {
+    setCountTwo(countTwo = countTwo+1);
+  }
+
+  return (
+    &lt;div>
+      &lt;p>You clicked {count} times&lt;/p>
+      &lt;button onClick={incFun}>
+        Click me
+      &lt;/button>
+      &lt;p>You clicked {countTwo} times&lt;/p>
+      &lt;button onClick={incFunTwo}>
+        Click me
+      &lt;/button>
+    &lt;/div>
+  );
+}
+
+export default App;
+
+//conditionally useEffect
+useEffect(()=>{
+    if(count>0){
+        document.title("your count is ");
+    }else{
+        document.title("your count is " + count);
+    }
+})
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="func_php">
+                            <div>
+                                <span class="text">useRef hook in React
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-php">useRef is mutable because it not rerender dom
+we can easily access the value in uncontrolled way
+import React, {useState, useEffect, useRef} from 'react';
+
+const UseStates = () => {
+
+  const ref = useRef();
+
+  const submitFun = (e) => {
+    e.preventDefault();
+    console.log(ref.current.value);
+  }
+
+  let count = 0;
+  useEffect(() => {
+    console.log(count = count+1);
+  });
+
+  return(
+    &lt;>
+      &lt;h1>Hello UseRef Hook&lt;/h1>
+      &lt;form onSubmit={submitFun}>
+        &lt;input type="text" ref={ref}/>
+        &lt;input type="submit" />
+      &lt;/form>
+    &lt;/>
+  )
+};
+
+export default UseStates;
+
+</code>
+                            </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="func_php">
+                            <div>
+                                <span class="text">React Icons
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-php">https://react-icons.github.io/react-icons
+</code>
+                            </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="func_php">
+                            <div>
+                                <span class="text">UseReducer hook in React
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-php">useReducer Hook returns the current state and a dispatch method.
+
+import React, {useState, useEffect, useRef, useReducer} from 'react';
+
+let initialData = 0;
+
+const reducer = (state, action) => {
+    debugger
+    if(action.type === "Increment") {
+        return state+1;
+    }else{
+        return state-1;
+    }
+};
+
+
+const UseStates = () => {
+
+const [state, dispatch] = useReducer(reducer, initialData);
+
+
+return(
+&lt;>
+    &lt;h1>{state}&lt;/h1>
+    &lt;button onClick={()=>dispatch({type:"Increment"})}>Increment&lt;/button>
+    &lt;button onClick={()=>dispatch({type:"Decrement"})}>Decrement&lt;/button>
+&lt;/>
+)
+};
+
+export default UseStates;
+
+</code>
+                            </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="func_php">
+                            <div>
+                                <span class="text">React Toastify in React
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-php">https://www.npmjs.com/package/react-toastify
+for error and success
+</code>
+                            </pre>
+                                </span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-6 right">
+                    <ul>
+                        <li id="func_php">
+                            <div>
+                                <span class="text">Babel js support modern js ES so we're using for import
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-php">import react from 'react';
+import reactDom from 'react-dom';
+</code>
+                            </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="func_php">
+                            <div>
+                                <span class="text">Render multiple JSX elements using ways below
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-php">ReactDom.render(
+&lt;div>
+    &lt;h1>Hello world&lt;/h1>
+    &lt;p>Paragraph&lt;/p>
+&lt;/div>,
+    document.getElementById("root"));
+</code>
+
+<code class="language-php">ReactDom.render(
+[
+    &lt;h1>Hello world&lt;/h1>,
+    &lt;p>Paragraph&lt;/p>
+],
+    document.getElementById("root"));
+</code>
+
+<code class="language-php">ReactDom.render(
+&lt;React.Fragment>
+    &lt;h1>Hello world&lt;/h1>,
+    &lt;p>Paragraph&lt;/p>
+&lt;/React.Fragment>,
+    document.getElementById("root"));
+</code>
+
+<code class="language-php">ReactDom.render(
+&lt;>
+    &lt;h1>Hello world&lt;/h1>,
+    &lt;p>Paragraph&lt;/p>
+&lt;/>,
+    document.getElementById("root"));
+</code>
+                            </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="func_php">
+                            <div>
+                                <span class="text">How to use Google fonts in React
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-php">In index.html you can link cdn of your font family  
+</code>
+                            </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="func_php">
+                            <div>
+                                <span class="text">Internal CSS & Inline CSS Styling In React
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-php">Inline CSS
+ReactDOM.render(
+&lt;>
+    &lt;p style={{backgroundColor: "tomato", color: "#ffffff"}}>{currDate}&lt;/p>
+&lt;/>,
+document.getElementById("root")
+);
+
+Internal CSS Using  Object below:-
+const myCss = {
+    backgroundColor: "tomato",
+    color: "#ffffff",
+    textTransform: "uppercase",
+    textAlign: "center",
+    padding: "20px",
+    fontSize: "26px",
+    fontWeight: "600",
+    boxShadow: "0 0 20px 1px rgb(0 0 0 / 20%)",
+    fontFamily: "'Josefin Sans', sans-serif"
+}
+  
+&lt;>
+    &lt;p style={myCss}>{currDate}&lt;/p>
+&lt;/>,
+document.getElementById("root")
+);
+</code>
+                            </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="func_php">
+                            <div>
+                                <span class="text">Simple Greeting website in React
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-php">import React from "react";
+import ReactDOM from "react-dom";
+
+const fullName = "Mohit";
+const date = new Date();
+const hours = date.getHours();
+let greeting = "";
+let greetingStyle = "";
+
+if(hours >= 1 && hours < 12){
+    greeting = "Good Morning";
+    greetingStyle = {
+    backgroundColor: "tomato",
+    color: "#ffffff"
+    }
+}else if(hours >= 12 && hours < 16){
+    greeting = "Good Afternoon";
+    greetingStyle = {
+    backgroundColor: "tomato",
+    color: "#ffffff"
+    }
+}else if(hours >= 16 && hours < 20){
+    greeting = "Good Evening";
+    greetingStyle = {
+    backgroundColor: "tomato",
+    color: "#ffffff"
+    }
+}else{
+    greeting = "Good Night";
+    greetingStyle = {
+    backgroundColor: "tomato",
+    color: "#ffffff"
+    }
+}
+
+ReactDOM.render(
+    &lt;>
+    &lt;p>Hello, {fullName} &lt;span style={greetingStyle}> {greeting} &lt;/span>&lt;/p>
+    &lt;/>,
+    document.getElementById("root")
+)
+</code>
+                            </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="func_php">
+                            <div>
+                                <span class="text">Destructing Object and Arrays
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-php">const [car, truck, suv] = vehicles;
+let x = props.x;
+let y = props.y;
+let z = props.z;
+
+Object Destructing
+const {x, y, z} = props;
+</code>
+                            </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="func_php">
+                            <div>
+                                <span class="text">Slot Machine in React
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-php">&lt;a href="./slot-machine.txt">&lt;/a>
+</code>
+                            </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    useState in React
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-javascript">Use state is function which return an array with two items
+First is object and second one is update function
+First is current Data and second one is updated data
+when useState run it rerender dom
+
+using useState we can change the state of any variable
+
+for use useState need to import like below:-
+import React, {useState} from "react";
+
+useState() Always used in functional component
+
+Array Destructuring
+
+const [count] = useState(2);
+
+useState(2) means 2 is initial value assign to count variable 
+
+const [count, updateFun] = useState(2);
+
+updateFun is update function which is use to 
+update count var's value
+
+
+Counter Increment Example below:-
+&lt;a href="./useState-inc-dec.txt">&lt;/a>
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    Digital Clock in React
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-javascript">Digital Clock
+&lt;a href="./digital-clock.txt">&lt;/a>
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    Get form field value in React
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-javascript">Basic form field value
+&lt;a href="./basic-form-field.txt">&lt;/a>
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    Get form field value in React
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-javascript">Basic form field value
+&lt;a href="./basic-form-field-2.txt">&lt;/a>
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    Form with two fields in React
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-javascript">&lt;a href="./form-with-two-fields.txt">&lt;/a>
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    useState with Object in React
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-javascript">&lt;a href="./useState-with-object.txt">&lt;/a>
+&lt;a href="./form-with-multiple-fields.txt">&lt;/a>
+&lt;a href="./form-with-multiple-fields-short.txt">&lt;/a>
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    three dots ... Spread Operator in React
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-javascript">Working like Concatination
+let racingGames = ["Forza Horizon 5", "Dirt Rally 2", "Burnout"];
+let actionGames = ["Garena Free Fire", "PUBG Mobile", "Call of Duty Mobile"];
+let allGames = [...racingGames, ...actionGames];
+console.log(racingGames);
+console.log(actionGames);
+console.log(allGames);
+
+
+// Destructuring Array and 
+//get remaining values except first example below:-
+let [firstGame, ...remaining] = allGames;
+console.log(firstGame);
+console.log(remaining);
+
+
+// ... In Object
+let favColor = {
+    colorOne: "Black",
+    colorTwo: "Blue",
+    colorThird: "White",
+}
+let notFavColor = {
+    colorFourth: "Green",
+    colorFifth: "Yellow",
+    colorSixth: "Orange",
+}
+
+let allColors = {
+    ...favColor,
+    ...notFavColor,
+    colorSeventh: "Pink",
+}
+
+console.log(favColor);
+console.log(notFavColor);
+console.log(allColors);
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    To Do List in React
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-javascript">&lt;a href="./todolist.txt">&lt;/a>
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    Material Ui Icons in React
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-javascript">Search Material ui icons in google and follow 
+// with npm
+npm install @material-ui/icons
+
+// with npm
+npm install @material-ui/core
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    Change Background using Conditional CSS
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-javascript">&lt;a href="./change-bg-using-conditional-css.txt">&lt;/a>
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    fetch data from API in React
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-javascript">const getDataFromApi = async () => {       
+    const res = await fetch("https://data.covid19india.org/data.json");
+    const actualData = await res.json();
+    console.log(actualData);
+}
+
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    fetch Covid data from API in React
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-javascript">&lt;a href="./covid-data.txt">&lt;/a>
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    Routing in React
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-javascript">Two types
+Server side page reload
+Client side page not reload 
+In react we are using client side routing
+before use client side routing we need to install dom-router
+https://reactrouter.com/docs/en/v6/getting-started/installation#basic-installation
+using npm we can easily install with command 
+npm install react-router-dom@6
+Best tutorial link below:-
+https://www.freecodecamp.org/news/how-to-use-react-router-version-6/
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter } from "react-router-dom";
+
+ReactDOM.render(
+  &lt;BrowserRouter>
+    &lt;App />
+  &lt;/BrowserRouter>,
+  document.getElementById("root")
+);
+
+in App .jsx
+import { Routes, Route } from "react-router-dom"
+function App() {
+    return (
+      &lt;div className="App">
+        &lt;Routes>
+          &lt;Route exact path="/" element={ &lt;Home/> } />
+          &lt;Route path="about" element={ &lt;About/> } />
+          &lt;Route path="contact" element={ &lt;Contact/> } />
+        &lt;/Routes>
+      &lt;/div>
+    )
+  }
+  
+  export default App
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    Header in React
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-javascript">import React from 'react';
+import {Link, NavLink} from 'react-router-dom';
+    
+const Header = () => {
+    return(
+        &lt;>
+            &lt;nav>
+                &lt;ul>
+                &lt;li>
+                    &lt;Link to="/">Home&lt;/Link>
+                &lt;/li>
+                &lt;li>
+                    &lt;Link to="/about">About&lt;/Link>
+                &lt;/li>
+                &lt;li>
+                    &lt;Link to="/contact">Contact&lt;/Link>
+                &lt;/li>
+                &lt;/ul>
+            &lt;/nav>
+
+            {/* NavLink has power of check active current page 
+            exact for exact check and pass aria-current attr to current element too*/}
+            &lt;nav>
+                &lt;ul>
+                &lt;li>
+                    &lt;NavLink exact to="/">Home&lt;/NavLink>
+                &lt;/li>
+                &lt;li>
+                    &lt;NavLink to="/about">About&lt;/NavLink>
+                &lt;/li>
+                &lt;li>
+                    &lt;NavLink to="/contact">Contact&lt;/NavLink>
+                &lt;/li>
+                &lt;/ul>
+            &lt;/nav>
+        &lt;/>
+    )
+}
+
+export default Header;
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    Page Title dynamic in React
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-javascript">Pass props and call by attrName pageTitle as below
+&lt;Routes>
+    &lt;Route index element={&lt;Home pageTitle="Home"/>} />
+    &lt;Route path="/about" element={ &lt;About pageTitle="About"/> } />
+    &lt;Route path="/contact" element={ &lt;Contact pageTitle="Contact"/> } />
+    &lt;Route path="*" element={ &lt;ErrorPage/> } />
+&lt;/Routes>
+
+import React from 'react';
+
+const Home = (props) => {
+    return(
+        &lt;>
+            &lt;h1>This is {props.pageTitle} Page&lt;/h1>
+        &lt;/>
+    )
+}
+
+export default Home;
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    Use Params in React
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-javascript">Check the path below:- :fname is the parameter for dynamic
+data display 
+
+const App = () => {
+return (
+&lt;>
+    &lt;Routes>
+    &lt;Route path="/user/:fname" element={ &lt;User/> } />
+    &lt;Route path="*" element={ &lt;ErrorPage/> } />
+    &lt;/Routes>
+
+    &lt;Header/>
+&lt;/>
+)
+}
+
+//Now check our functional component where use param
+import { useParams } from 'react-router-dom';
+
+const User = () => {
+    const { fname } = useParams();
+    return(
+        &lt;>
+            &lt;h1>{fname} Data Page&lt;/h1>
+        &lt;/>
+    )
+}
+export default User;
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    Use Location in React
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-javascript">import React from 'react';
+import { useLocation } from 'react-router-dom';
+
+const User = () => {
+
+    const location = useLocation();
+    console.log(location);
+    
+    return(
+        &lt;>
+            { location.pathname === `/user/Mohit` ? 
+            &lt;button>Click me&lt;/button> : null
+            }
+        &lt;/>
+    )
+}
+export default User;
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    Use History in React
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-javascript">Now history.push() will be replaced with navigate():
+import React from 'react';
+import { useNavigate  } from 'react-router-dom';
+
+const User = () => {
+
+    const navigate = useNavigate();
+    console.log(navigate);
+    
+    return(
+        &lt;>
+            &lt;button onClick={()=>navigate('/home');}>Go Backk&lt;/button>
+            &lt;button onClick={() => navigate(-1)}>Go Backk&lt;/button>
+        &lt;/>
+    )
+}
+export default User;
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    Navigation in React
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-javascript">&lt;a href="./Navigation/">./Navigation/&lt;/a>
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    Complete Website in React
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-javascript">&lt;a href="./website/">./Website/&lt;/a>
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    Host Website in Github
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-javascript">Download git bash
+First go to your app folder
+cd = change drive
+check directory inside dir using dir
+check your app is already added on git or not using 
+git status 
+when you are in app folder then run this command 
+git init
+check git status again using git status
+then add your app files using command 
+git add . 
+after added git commit -m "My-first-commit"
+Now create online git repository
+then follow there …or push an existing repository from the command line steps
+git remote add origin https://github.com/iammohitverma/first-react-website.git
+git branch -M main
+git push -u origin main
+after that follow steps from this website
+https://create-react-app.dev/docs/deployment/#step-1-add-homepage-to-packagejson
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    Sass installation in React
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-javascript">open terminal
+hit this command
+npm i sass
+
+for Developers
+npm i --save-dev node-sass
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    Weather Api in React
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-javascript">import React, { useState, useEffect } from 'react';
+
+const WeatherApi = () => {
+
+    const [apiData, setapiData] = useState(null);
+    const [searchResult, setSearchResult] = useState("Pinjore");
+
+    const inputChange = (event) => {
+        setSearchResult(event.target.value);
+    }
+
+    useEffect(() => {
+        const getData = async () => {       
+            const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${searchResult}&units=metric&appid=3f44c9715ae37b2b4db92d9f1cd8d988`);
+            const actualData = await res.json();
+            setapiData(actualData.main);
+        };
+        getData();
+    }, [searchResult]);
+
+    return(
+        &lt;>
+            &lt;section>
+                &lt;div className='weather-api'>
+                    &lt;form onSubmit={(e)=>e.preventDefault()}>
+                        &lt;input type="search" placeholder='Search Weather Report' onChange={inputChange} value={searchResult}/>
+                        &lt;input type="submit" value="Search"/>
+                    &lt;/form>
+                    {
+                        (apiData) ? (
+                            &lt;>
+                            &lt;div className='data'>
+                                &lt;h2>City: {searchResult}&lt;/h2>
+                                &lt;p>Temperatue: {apiData.temp}&lt;/p>
+                            &lt;/div>
+                            &lt;/>
+                        ) : (&lt;p>No Data Found&lt;/p>)
+                    }
+                &lt;/div>
+            &lt;/section>
+        &lt;/>
+    )
+}
+
+export default WeatherApi;
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    Write Code 10X Times Faster with React JSX
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-javascript">Best Autocomplete Html in JSX
+open vs code settings then open JSON settings from top right icon 
+
+"emmet.includeLanguages":{
+    "javascript" : "javascriptreact"
+},
+"javascript.updateImportsOnFileMove.enabled": "always"
+
+Install Extension
+Es7 EQuimper
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    todoapp-crud React
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-javascript">&lt;a href="./todoapp-crud/">./todoapp-crud/ &lt;/a>
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    For In Loop in Javascript
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-javascript">The for in loop iterates over a person object
+Each iteration returns a key (x)
+The key is used to access the value of the key
+The value of the key is person[x]
+
+const person = {fname:"Mohit", lname:"Verma", age:25}; 
+
+ for (let x in person) {
+     console.log(x); //return only keys
+     console.log(person[x]); //return only values
+ }
+
+ const person = [1,2,3,4,5]
+ console.log(person);
+ for (let x in person) {
+     console.log("index " + x); 
+     console.log("array value " + person[x]); 
+ }
+
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    For of Loop in Javascript
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-javascript">The for of loop iterates over a person object
+const person = [1,2,3,4,5]
+console.log(person);
+for (let x of person) {
+    console.log("array value " + x); 
+}
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    Put Image Folder in public folder
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-javascript">Then you can easily access by path below:-
+/images/your-image.jpg
+&lt;img src="/images/your-image.jpg"/>
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    Remove duplicate entry from array
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-javascript">let a = ["1", "2", "3", "2", "3", "2", "3", "1", "1"];
+let b = new Set(["1", "2", "3", "2", "3", "2", "3", "1", "1"]);
+console.log(a);
+console.log(b);
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    Toggle in React
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-javascript">import React, {useState} from 'react';
+const UseStates = () => {
+
+    const [isActive, setActive] = useState(false);
+
+    const [name, setName] = useState("Mohit");
+    
+    const changeVal = () => {
+        setActive(!isActive);
+        !isActive ? setName("Verma") : setName("Mohit");    
+    }
+
+    return(
+        &lt;>
+            &lt;h1>Hello {name}&lt;/h1>
+            &lt;button className='btn btn-primary' onClick={changeVal}>Click Me&lt;/button>
+        &lt;/>
+    )
+};
+
+export default UseStates;
+    
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    ... Three Dots in React
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-javascript">Change only roll no from studentData object
+import React, {useState} from 'react';
+
+const UseStates = () => {
+
+    let [studentData, setStudentData] = useState({
+        name: "Mohit",
+        class: "BCA",
+        roll:1
+    });
+
+    const changeVal = () => {
+        setStudentData({...studentData, roll: 5 });
+        console.log(studentData);
+    }
+
+    return(
+    &lt;>
+        &lt;h1>Hello my Name is {studentData.name}&lt;/h1>
+        &lt;h1>Hello my Class is {studentData.class}&lt;/h1>
+        &lt;h1>Hello my Roll is {studentData.roll}&lt;/h1>
+        &lt;button className='btn btn-primary' onClick={changeVal}>Click Me&lt;/button>
+    &lt;/>
+    )
+};
+
+export default UseStates;
+    
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    Short circuit evaluation in React
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-javascript">{demoData || "&lt;p>Para&lt;/p>" }
+if demoData avail then return demoData
+otherwise return para
+
+{demoData && "&lt;p>Para&lt;/p>" }
+if demoData & para avail then return para
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    Class based Component in React
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-javascript">import React from 'react';
+
+class MyClassComp extends React.Component {
+    render() {
+        return &lt;h1>Hello&lt;/h1>;
+    }
+}
+
+export default MyClassComp
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    Props in Class based Component in React
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-javascript">import React from "react";
+import MyClassComp from "./Components/MyClassComp";
+
+function App() {
+    return (
+        &lt;>
+            &lt;MyClassComp name="Mohit"/>
+        &lt;/>
+    );
+}
+
+export default App;
+
+==================================
+
+import React from 'react';
+
+class MyClassComp extends React.Component {
+    render() {
+    let {name}= this.props;
+      return &lt;h1>Hello, {name}&lt;/h1>;
+    }
+  }
+
+export default MyClassComp;
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+import React, { useState } from "react";
+
+const App = () => {
+
+const [fullName, updateFullName] = useState({
+    fname: "",
+    lname: ""
+});
+
+const [afterSubmitName, updateAfterSubmitName] = useState("");
+
+const inputChange = (event) => {
+    let inputValue = event.target.value;
+    let inputName = event.target.name;
+    updateFullName((prevState) => {
+        if(inputName === "fname"){
+            return{
+                fname: inputValue,
+                lname: prevState.lname
+            }
+        }else if(inputName === "lname"){
+            return{
+                fname: prevState.fname,
+                lname: inputValue
+            }
+        }
+    });
+} 
+
+const formSubmit = (event) => {
+    event.preventDefault();
+    updateAfterSubmitName(fullName.fname + " " + fullName.lname);
+}
+
+    
+    return(
+        <>
+            <div className="wrap">
+                <div className="inner">
+                    <h1>Hello, {afterSubmitName}</h1>
+                    <br/>
+                    <form onSubmit={formSubmit}>
+                        <input type="text" onChange={inputChange} placeholder="First Name" name="fname" value={fullName.fname}/>
+                        <input type="text" onChange={inputChange} placeholder="Last Name" name="lname" value={fullName.lname}/>
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </>
+    )
+
+}
+
+export default App;

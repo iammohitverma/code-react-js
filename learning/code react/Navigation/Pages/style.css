@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+.container {
+  max-width: 1320px;
+  padding: 0 15px;
+  margin-inline: auto;
+}
+body {
+  min-height: 100vh;
+  background-color: #f6faff;
+}
+header {
+  background-color: #222f3e;
+  padding: 20px;
+}
+header .inner,
+header ul {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+header .inner {
+  justify-content: space-between;
+}
+.logo-wrap * {
+  font-size: 48px;
+  font-weight: 300;
+  color: #fff;
+}
+header ul li {
+  margin-left: 50px;
+}
+header ul li a {
+  font-size: 16px;
+  font-weight: 400;
+  color: #d7d7d7;
+  padding: 25px 0;
+  transition: 0.5s;
+}
+header ul li a:hover,
+header ul li a.active {
+  color: #fff;
+}
+section .box {
+  padding: 100px;
+  background: #fff;
+  margin: 100px 0;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  text-align: center;
+}
+section .box h2 {
+  font-size: 55px;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: #787878;
+  margin-bottom: 30px;
+}
+section .box p {
+  font-size: 30px;
+  color: #b5b8bb;
+}

@@ -1,0 +1,53 @@
+import React, {useState, useEffect} from 'react'
+import "./StateWiseData.css";
+
+const StateWiseData = () => {
+   
+    const [allData, setAllData] = useState([]);
+
+    const getDataFromApi = async () => {       
+        const res = await fetch("https://data.covid19india.org/data.json");
+        const actualData = await res.json();
+        console.log(actualData);
+        setAllData(actualData.statewise);
+    }
+
+    useEffect(() => {
+        getDataFromApi();
+    }, [])
+
+
+    console.log(allData);
+
+    return (
+        <div className='table-wrap'>
+            <table>
+            <caption>List of Covid Cases</caption>
+                <thead>
+                    <tr>
+                        <th>State</th>
+                        <th>Active</th>
+                        <th>Death</th>
+                        <th>Recovered</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {
+                        allData.map((currElem)=>{
+                            return(
+                            <tr>
+                                    <td>{currElem.state}</td>
+                                    <td>{currElem.active}</td>
+                                    <td>{currElem.deaths}</td>
+                                    <td>{currElem.recovered}</td>
+                            </tr>
+                            )
+                        })
+                    }
+                </tbody>
+            </table>
+        </div>
+    )
+}
+
+export default StateWiseData;

@@ -1,0 +1,51 @@
+import React, {useState} from "react";
+
+const App = () => {
+  let [currentValue, updateValue] = useState("");
+  const changeInput = (e) => {
+    let initValue = e.target.value;
+    updateValue(initValue);
+  }
+  
+  let [resultOutput, updateValueOutput] = useState("");
+  const printValue = (e) => {
+    e.preventDefault();
+    updateValueOutput(currentValue + currentValueLastName);
+  }
+
+const [currentValueLastName, setCurrentValueLastName] = useState("");
+  const changeInputLastName = (e) => {
+    setCurrentValueLastName(e.target.value);
+  }
+
+
+  return(
+
+  <>
+
+    <div className="wrap">
+      <div className="container">
+        <div className="inner">
+        <h2>Hello, {resultOutput}</h2>
+        <form onSubmit={printValue}>
+          <div className="input-wrap">
+            <input type="text" placeholder="Enter Your Name" onChange={changeInput} value={currentValue}/>
+          </div>
+          <div className="input-wrap">
+            <input type="text" placeholder="Enter Your Last Name" onChange={changeInputLastName} value={currentValueLastName}/>
+          </div>
+          <div className="input-wrap">
+            <button type="submit"> Click me </button>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </>
+  
+  )
+}
+
+
+export default App;

@@ -1,0 +1,113 @@
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+
+
+
+function SlotBox(props){
+  debugger
+  let {x,y,z} = props;
+  if(x===y && y===z){
+    return (MatchingSlotBox(props))
+  }else{
+    return (notMatchingSlotBox(props))
+  } 
+}
+
+function MatchingSlotBox(props){
+  let {x,y,z} = props;
+  return(
+      <div className="slot-box">
+        <div className="inner">
+          {x + y + z}
+        </div>
+        <div className="result">
+          <p>Matching</p>
+        </div>
+      </div>
+    )
+}
+function notMatchingSlotBox(props){
+  let {x,y,z} = props;
+  return(
+    <div className="slot-box">
+      <div className="inner">
+        {x + y + z}
+      </div>
+      <div className="result">
+        <p>Not Matching</p>
+      </div>
+    </div>
+  )
+}
+
+
+
+ReactDOM.render(
+  <>
+
+  <section className="slot-machine">
+    <div className="container">
+      <div className="inner">
+        <h1>Welcome to Slot Machine</h1>
+        <SlotBox x="😊" y="😂" z="🤣"/>
+        <SlotBox x="😂" y="😂" z="😂"/>
+        <SlotBox x="😊" y="😂" z="🤣"/>
+      </div>
+    </div>
+  </section>
+
+  </>,
+  document.getElementById("root")
+)
+
+
+
+
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+.my-class {
+  background-color: tomato;
+  color: #ffffff;
+}
+.slot-machine {
+  position: relative;
+  background: #fbfbfb;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.slot-machine h1 {
+  font-size: 34px;
+  margin-bottom: 50px;
+  color: #222;
+}
+
+.slot-box {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 30px;
+  box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px;
+  background: #fff7e2;
+}
+
+.slot-box .inner {
+  font-size: 32px;
+  letter-spacing: 30px;
+  margin-bottom: 20px;
+}
+
+.slot-box .result p {
+  font-size: 20px;
+  font-weight: 600;
+  color: #222;
+}
+
+</style>

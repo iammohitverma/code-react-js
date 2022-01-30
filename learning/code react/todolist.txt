@@ -1,0 +1,203 @@
+import React, {useState} from "react";
+import Todolist from "./Todolist";
+
+const App = () => {
+
+const [currentInput, currentInputUpdate] = useState("");
+
+const [listArray, listArrayUpdate] = useState([]);
+
+const inputFun = (event) => {
+  currentInputUpdate(event.target.value);
+}
+
+const submitFun = (event) => {
+  event.preventDefault();
+  listArrayUpdate((prevState) => {
+    return[
+      ...prevState,
+      currentInput
+    ]
+  });
+  currentInputUpdate("");
+}
+
+const deleteFun = (id) => {
+  listArrayUpdate((oldArray) => {
+    return oldArray.filter((currElem, index) =>{
+      return index !== id;
+    });
+  });
+}
+
+  return(
+
+  <>
+
+    <div className="wrap">
+      <div className="container">
+        <div className="inner">
+        <div className="todo-wrap">
+          <h2>To Do App</h2>
+          <div className="box">
+
+            <div className="form-wrap">
+              <form onSubmit={submitFun}>
+                <div className="input-wrap">
+                  <input type="text" placeholder="Enter Notes" onChange={inputFun} value={currentInput}/> 
+                  <button type="submit">+</button>
+                </div>
+              </form>
+            </div>
+
+
+            <div className="listing-wrap">
+              <ul>
+                {
+                  listArray.map((elem, index) => {
+                    return(
+                      <Todolist key={index} id={index} listData={elem} onSelect={deleteFun}/>
+                    )
+                  })
+                }
+              </ul>            
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+
+  </>
+  
+  )
+}
+
+
+export default App;
+
+
+
+
+
+
+
+
+// Todolist.jsx code below
+import React from "react";
+
+const Todolist = (props) => {
+    return(
+        <>
+            <li>
+                <span>{props.listData}</span>
+                <i onClick={()=>{props.onSelect(props.id)}}><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="bi bi-x-square-fill" viewBox="0 0 16 16">
+                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z"/>
+                </svg></i>
+            </li>
+        </>
+    )
+}
+
+export default Todolist;
+
+
+
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  .wrap {
+    padding: 100px;
+    background: hsl(242deg 100% 99%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .inner {
+    text-align: center;
+    background-color: #fff;
+    box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
+    max-width: 500px;
+    padding: 50px;
+    margin: auto;
+  }
+  h2 {
+    font-size: 32px;
+    font-weight: 300;
+    margin-bottom: 30px;
+  }
+  .form-wrap {
+    margin-bottom: 20px;
+  }
+  
+  .input-wrap {
+    position: relative;
+    overflow: hidden;
+    box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
+  }
+  .input-wrap input {
+    width: 100%;
+    border: none;
+    padding: 15px;
+    padding-right: 65px;
+    font-size: 16px;
+  }
+  .input-wrap button {
+    position: absolute;
+    width: 50px;
+    height: 100%;
+    background: #ffc107;
+    top: 0;
+    right: 0;
+    border: none;
+    font-size: 38px;
+    line-height: 1;
+    font-weight: 600;
+    z-index: 1;
+  }
+  
+  .listing-wrap {
+    background: #ffc106;
+    padding: 20px;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .listing-wrap li {
+    position: relative;
+    text-align: left;
+    background: #fff;
+    padding: 10px;
+    padding-right: 30px;
+  }
+  .listing-wrap li:not(:last-child) {
+    margin-bottom: 20px;
+  }
+  .listing-wrap li span {
+    display: block;
+    font-size: 14px;
+  }
+  .listing-wrap li i {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+  }
+  .listing-wrap li svg {
+    width: 100%;
+    height: 100%;
+  }
+  
+</style>
