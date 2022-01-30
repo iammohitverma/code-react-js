@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import "./StateWiseData.css";
- 
+
 const StateWiseData = () => {
    
     const [allData, setAllData] = useState([]);
