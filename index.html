@@ -1930,6 +1930,131 @@ export default MyClassComp;
                                 </span>
                             </div>
                         </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    ToDo app
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-javascript">import { useEffect, useState } from "react";
+import TimeComp from "./TimeComp.jsx";
+
+const setTodo = () => {
+    let allLsDataObj = JSON.parse(localStorage.getItem("todoItems"));
+    if (allLsDataObj) {
+    return allLsDataObj;
+    } else {
+    return [];
+    }
+};
+
+export const TodoApp = () => {
+    const [todoarray, setTodoarray] = useState(setTodo);
+    const [inputVal, setInputVal] = useState("");
+
+    const [isEdit, setIsEdit] = useState(false);
+    const [editId, setEditId] = useState(0);
+
+    const handleInputChange = (value) => {
+    setInputVal(value);
+    };
+
+    //   handleFormSubmit
+    const handleFormSubmit = (e) => {
+    e.preventDefault();
+    if (!inputVal) return;
+    // if(todoarray.includes(inputVal)) return;
+    const ifAlreadyExist = todoarray.find((item) => {
+        return inputVal == item.content;
+    });
+    if (ifAlreadyExist) return;
+
+    // if item edit
+    if (isEdit) {
+        const updatedArray = todoarray.map((item) => {
+        if (item.id === editId) {
+            return { ...item, content: inputVal }; // Update the content of the matched item
+        }
+        return item; // Return other items unchanged
+        });
+        setTodoarray(updatedArray);
+        setIsEdit(false);
+    } else {
+        // if item new
+        const d = new Date();
+        setTodoarray((prevData) => [
+        ...prevData,
+        { id: d.getTime(), content: inputVal },
+        ]);
+    }
+
+    setInputVal("");
+    };
+
+    //   editItem
+    const editItem = (itemId) => {
+    const findById = todoarray.find((item) => {
+        return itemId == item.id;
+    });
+    setInputVal(findById.content);
+    setIsEdit(true);
+    setEditId(itemId);
+    };
+
+    //   deleteItem
+    const deleteItem = (item) => {
+    const filterItems = todoarray.filter((todo) => {
+        return item != todo;
+    });
+    setTodoarray(filterItems);
+    setIsEdit(false);
+    setInputVal("");
+    };
+
+    //   set items using useEffect
+    useEffect(() => {
+    localStorage.setItem("todoItems", JSON.stringify(todoarray));
+    }, [todoarray]);
+
+    return (
+    <>
+        &lt;section className="todoSec">
+        &lt;div className="container">
+            &lt;div className="todoMain">
+            &lt;TimeComp />
+            &lt;form onSubmit={handleFormSubmit}>
+                &lt;input
+                type="text"
+                value={inputVal}
+                onChange={(e) => handleInputChange(e.target.value)}
+                />
+                &lt;input type="submit" value={isEdit ? "Edit" : "Save"} />
+            &lt;/form>
+            &lt;/div>
+        &lt;/div>
+        &lt;/section>
+
+        &lt;ul>
+        {todoarray.map((item) => {
+            return (
+            &lt;li key={item.id}>
+                &lt;span> {item.content} &lt;/span>
+                &lt;button onClick={() => editItem(item.id)}>E&lt;/button>
+                &lt;button onClick={() => deleteItem(item)}>D&lt;/button>
+            &lt;/li>
+            );
+        })}
+        &lt;/ul>
+    </>
+    );
+};    
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
