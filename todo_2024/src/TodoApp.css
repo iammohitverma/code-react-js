@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins";
+}
+
+.todoSec {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #111;
+}
+
+.todoWrap {
+    position: relative;
+    width: 700px;
+    max-width: 100%;
+    padding: 50px;
+    background-color: #fff;
+}
+
+.todoWrap .header {
+    margin-bottom: 20px;
+}
+
+.todoWrap .header h1 {
+    font-size: 22px;
+    color: #000;
+}
+
+.todoForm {
+    margin-top: 40px;
+}
+
+.fieldsWrap {
+    position: relative;
+    display: flex;
+}
+
+.fieldsWrap .inputWrap {
+    position: relative;
+    flex-grow: 1;
+}
+
+.fieldsWrap .inputWrap input {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    font-size: 16px;
+    color: #111;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.fieldsWrap .submitWrap {
+    width: 200px;
+}
+
+.fieldsWrap .submitWrap input {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    background-color: #78d5ff;
+    color: #111;
+    cursor: pointer;
+}
+
+.TodoList {
+    position: relative;
+    margin-top: 40px;
+}
+
+.TodoList ul {
+    list-style-type: none;
+}
+
+.TodoList ul li {
+    list-style-type: none;
+    margin-bottom: 20px;
+    padding: 12px 20px;
+    border-radius: 40px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.TodoList ul li .operations {
+    display: flex;
+}
+
+.TodoList ul li .operations button {
+    background: transparent;
+    margin: 10px;
+    cursor: pointer;
+    border: none;
+    display: inline-flex;
+}
+
+.TodoList ul li .operations svg {
+    width: 25px;
+    height: 25px;
+}
+
+.TodoList ul li .operations .check svg {
+    color: rgb(55, 173, 0);
+}
+
+.TodoList ul li .operations .dlt svg {
+    color: red
+}
+
+.deleteAllBtn {
+    background-color: red;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    width: 100%;
+    padding: 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.checked {
+    text-decoration: line-through;
+}
